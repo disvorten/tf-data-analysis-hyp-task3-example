@@ -7,8 +7,8 @@ chat_id = 1109095907  # Ваш chat ID, не меняйте название п�
 
 def solution(x, y) -> bool:
     alpha = 0.06
-    a, b = ttest_ind(x, y, alternative='greater')
-    if b <= alpha:
+    res = ttest_ind(x, y, alternative='greater')
+    if res.pvalue <= alpha:
         return True
     else:
         return False
